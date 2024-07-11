@@ -1,21 +1,25 @@
-# MP3Cat
+# MP3Cat-fixglob
 
 [1]: https://www.dmulholl.com/dev/mp3cat.html
-[2]: https://github.com/dmulholl/mp3cat/releases
+[2]: https://github.com/TAbdiukov/mp3cat-fixglob/releases
 [3]: https://github.com/crra/mp3binder
 
 
-MP3Cat is a simple command line utility for concatenating MP3 files without re-encoding.
+**`MP3Cat-fixglob`** is a fork of MP3Cat. MP3Cat is a simple command line utility for concatenating MP3 files without re-encoding.
 
 <p align="center">
     <img src="mp3cat.png" width="600px">
 </p>
 
 
+## Changes from upstream
+
+* Fix Globbing by manually evaluating files with Go's Glob functionality
+* Add specific to this repo .gitignore (ignores `.mp3`s for git)
 
 ## Download
 
-You can download a pre-compiled binary from the [releases page][2].
+You can download a pre-compiled binary from the [releases page (fork)][2].
 
 
 
