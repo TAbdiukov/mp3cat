@@ -83,7 +83,10 @@ func main() {
 			os.Exit(1)
 		}
 	} else if len(parser.Args) > 0 {
-		files = parser.Args
+		for _, pattern := range parser.Args {
+			matches, _ := filepath.Glob(pattern)
+			files = append(files, matches...)
+		}
 	} else {
 		fmt.Fprintln(os.Stderr, "Error: you must specify files to merge.")
 		os.Exit(1)
