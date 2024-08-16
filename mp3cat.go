@@ -85,7 +85,20 @@ func main() {
 	} else if len(parser.Args) > 0 {
 		for _, pattern := range parser.Args {
 			matches, _ := filepath.Glob(pattern)
-			files = append(files, matches...)
+			for _, match := range matches {
+				// to only add files not already matched
+				seen := false
+				for _, file := range files {
+					if file == match {
+						seen = true
+						break
+					}
+				}
+				if !seen {
+					files = append(files, match)
+					// fmt.Println("Found new file:", match)
+				}
+			}
 		}
 	} else {
 		fmt.Fprintln(os.Stderr, "Error: you must specify files to merge.")
