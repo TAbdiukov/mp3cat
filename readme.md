@@ -15,6 +15,7 @@
 ## Changes from upstream
 
 * Fix Globbing by manually evaluating files with Go's Glob functionality
+* Do not match duplicate files
 * Add specific to this repo .gitignore (ignores `.mp3`s for git)
 
 ## Download
